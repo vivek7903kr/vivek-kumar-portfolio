@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/9049124cc9.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <div id="header">
+    <div class="container">
+      <nav>
+        <img src="image/Vivek-designstyle-kiddo-l.png" alt="logo">
+        <ul id="sidemenu">
+          <li><a href="#header">Home</a></li>
+          <li><a href="#About">About</a></li>
+          <li><a href="#services">Service</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <i class="fas fa-times" onclick="closemenu()"></i>
+        </ul>
+        <i class="fas fa-bars" onclick="openmenu()"></i>
+      </nav>
+      <div class="header-text">
+        <p>Web Developer</p>
+        <h1> my name is <span>vivek</span><br> I'm a Web Developer</h1>
+      </div>
+    </div>
+  </div>
+
+  <div id="About">
+    <div class="container">
+      <div class="row">
+        <div class="about-col-1">
+          <img src="image/developer.png" alt="">
+        </div>
+        <div class="about-col-2">
+          <h1 class="sub-title">About ME</h1>
+          <p>I'm a passionate web developer dedicated to building clean, modern, and user-friendly web experiences. I love turning ideas into interactive, high-performing websites that make an impact.</p>
+          <div class="tab-titles">
+            <!-- HTML CHANGE IS HERE -->
+            <p class="tab-links active-link" onclick="opentab('skills', event)">skills</p>
+            <p class="tab-links" onclick="opentab('education', event)">Education</p>
+          </div>
+          <div class="tab-contents active-tab" id="skills">
+            <ul>
+              <li><span>UI&UX</span><br>Designing web/App interfaces</li>
+              <li><span>Web Devlopment</span><br>Web app Devlopment</li>
+            </ul>
+          </div>
+          <div class="tab-contents" id="education">
+            <ul>
+              <li><span>2022-2026</span><br>Btech in Gandhi Engineering College,Bhubanserwar,odisha</li>
+              <li><span>2020-2022</span><br>intermediate schooling (+2) in DAV Public School,Bokaro,Jharkhand</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="services">
+    <div class="container">
+      <h1 class="sub-title">My Services</h1>
+      <div class="services-list">
+        <div>
+          <i class="fa-solid fa-code"></i>
+          <h2>web Design</h2>
+          <p>I craft visually engaging and user-friendly websites that blend clean aesthetics with intuitive functionality.”</p>
+          <a href="#">Learn more</a>
+        </div>
+        <div>
+          <i class="fa-solid fa-crop"></i>
+          <h2>UI/UX Design</h2>
+          <p>My design process combines research, strategy, and creativity to deliver intuitive UI and engaging UX. I believe great design solves problems and delights users at every touchpoint.</p>
+          <a href="#">Learn more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="portfolio">
+    <div class="container">
+      <h1 class="sub-title">My work</h1>
+      <div class="work-list ">
+        <div class="work">
+          <img src="image/mobile.png">
+          <div class="layer">
+            <h3>social media app</h3>
+            <p>The App connect you to the talented people around the world.</p>
+            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+        <div class="work">
+          <img src="image/music.png">
+          <div class="layer">
+            <h3>music app</h3>
+            <p>A sleek, user-centered music app that makes every beat feel personal.</p>
+            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+      </div>
+      <a href="#" class="btn">see more</a>
+    </div>
+  </div>
+
+  <div id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="contact-left">
+          <h1 class="sub-title">Contact Me</h1>
+          <p><i class="fa-solid fa-paper-plane"> </i> vivek7903kr@gmail.com</p>
+          <p><i class="fa-solid fa-phone"> </i> 8292498597</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/share/1ApA82x5Lx/"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/_.vivekkr._?igsh=MWp6NTZkNGcxdHNyag=="><i class="fa-brands fa-instagram"></i></a>
+            <a href="www.linkedin.com/in/vivek-kumar-272447293"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="8292498597"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+          <a href="image/Vivek_Kumar_Resume (1).pdf" download class="btn btn2">Download CV</a>
+        </div>
+        <div class="contact-right">
+            <form name="submit-to-google-sheet">
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="email" name="e-mail" placeholder="Your e-mail" required> <!-- Corrected type to "email" -->
+                <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                <button type="Submit" class="btn btn2">Submit</button>
+            </form>
+            <span id="msg"></span>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>Thankyou for Visiting<i class="fa-solid fa-house"></i> <br>Visit Again </p>
+    </div>
+  </div>
+
+  <!-- CORRECTED JAVASCRIPT FOR TABS -->
+  <script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname, event) {
+      for (let tablink of tablinks) {
+        tablink.classList.remove("active-link");
+      }
+      for (let tabcontent of tabcontents) {
+        tabcontent.classList.remove("active-tab");
+      }
+      event.currentTarget.classList.add("active-link");
+      document.getElementById(tabname).classList.add("active-tab");
+    }
+  </script>
+
+  <!-- JAVASCRIPT FOR MOBILE MENU -->
+  <script>
+    var sidemenu = document.getElementById("sidemenu");
+    function openmenu() {
+      sidemenu.style.right = "0";
+    }
+    function closemenu() {
+      sidemenu.style.right = "-200px";
+    }
+  </script>
+
+  
+  <script>
+    
+   const scriptURL = 'https://script.google.com/macros/s/AKfycbydIaOg3dDg2rXVoW6URj8P6Vax1dy7-2Nv6_aN0fzyLtrcgdQF67_QSZouN0hKEnguxQ/exec';
+
+    const form = document.forms['submit-to-google-sheet'];
+    const msg = document.getElementById("msg");
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => {
+          msg.innerHTML = "Message sent successfully";
+          setTimeout(function () {
+            msg.innerHTML = "";
+          }, 5000);
+          form.reset();
+        })
+        .catch(error => console.error('Error!', error.message));
+    });
+  </script>
+
+</body>
+</html>
